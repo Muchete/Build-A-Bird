@@ -2,14 +2,13 @@ class Sample {
 
 	public AudioPlayer player;
 	public int speed, loopCount, iterations, spaceBetween, loopMin,
-	       loopMax, spaceMin, spaceMax, endTime = 200000000;
+	       loopMax, spaceMin, spaceMax, endTime;
 	public float loopSpace;
 	public String status = "OFF";
 	public boolean running = false, islooping = false;
 
 	Sample (String filename) {
 		player = m.loadFile(filename);
-		// player.setLoopPoints(loopStart,loopEnd);
 
 		sampleList.add(this);
 	}
@@ -19,8 +18,17 @@ class Sample {
 		player.play();
 	}
 
-	void doLoop(int lmi, int lma, float ls, int smi, int sma) {
+	void defineLoop(int lmi, int lma, float ls, int smi, int sma){
+		loopMin = lmi;
+		loopMax = lma;
+		loopSpace = ls;
+		spaceMin = smi;
+		spaceMax = sma;
+	}
+
+	void startLoop(int lmi, int lma, float ls, int smi, int sma) {
 		status = "ON";
+		running = true;
 		loopMin = lmi;
 		loopMax = lma;
 		loopSpace = ls;
@@ -31,10 +39,20 @@ class Sample {
 
 	void stopLoop() {
 		status = "OFF";
+		running = false;
+		println("stopped Loop");
 	}
 
 	void restartLoop() {
 		createLoopSequence();
+	}
+
+	void toggle(){
+		if (running){
+			stopLoop();
+		} else {
+			startLoop(loopMin,loopMax, loopSpace, spaceMin, spaceMax);
+		}
 	}
 
 	void createLoopSequence() {
@@ -44,11 +62,7 @@ class Sample {
 		spaceBetween = int(random(spaceMin, spaceMax) * 1000);
 		setEndTime();
 
-		println("millis(): " + millis());
-		println("player.length(): " + player.length());
-		println("iterations: " + iterations);
-		println("spaceBetween: " + spaceBetween);
-		println("endTime: " + endTime);
+		println("created loop");
 	}
 
 	void setEndTime() {
