@@ -7,18 +7,18 @@ ArrayList<Sample> sampleList = new ArrayList<Sample>();
 void setup() {
 	size(600, 600);
 
-	manakin = new Sample("Club-wingd_manakin.mp3", 2748, 3555);
+	manakin = new Sample("manakinSample.wav");
 }
 
 void draw() {
 	//loop through sampleList
-	for (Sample sample : sampleList) {
-  		sample.update();
+	for (Sample singleSample : sampleList) {
+  		singleSample.update();
 	}
 }
 
 void keyPressed () {
 
-	manakin.createLoopSequence(1,5,1,5);
+	manakin.doLoop(1,5,0.3,1,5);
 
 }
