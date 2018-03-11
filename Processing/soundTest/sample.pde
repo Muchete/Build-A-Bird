@@ -13,11 +13,9 @@ class Sample {
 		sampleList.add(this);
 	}
 
-	 void play() {
-		player.rewind();
-		player.play();
-	}
+	//callable functions: 
 
+	//creates loop without starting it
 	void defineLoop(int lmi, int lma, float ls, int smi, int sma){
 		loopMin = lmi;
 		loopMax = lma;
@@ -26,33 +24,38 @@ class Sample {
 		spaceMax = sma;
 	}
 
+	//creates loop and starts it
 	void startLoop(int lmi, int lma, float ls, int smi, int sma) {
 		status = "ON";
 		running = true;
-		loopMin = lmi;
-		loopMax = lma;
-		loopSpace = ls;
-		spaceMin = smi;
-		spaceMax = sma;
+		defineLoop(lmi, lma, ls, smi, sma);
 		createLoopSequence();
 	}
 
+	//stops loop
 	void stopLoop() {
 		status = "OFF";
 		running = false;
 		println("stopped Loop");
 	}
 
-	void restartLoop() {
-		createLoopSequence();
-	}
-
+	//starts or stops loop (needs to be previously defined)
 	void toggle(){
 		if (running){
 			stopLoop();
 		} else {
 			startLoop(loopMin,loopMax, loopSpace, spaceMin, spaceMax);
 		}
+	}
+
+	// necessary functions
+	void play() {
+		player.rewind();
+		player.play();
+	}
+
+	void restartLoop() {
+		createLoopSequence();
 	}
 
 	void createLoopSequence() {

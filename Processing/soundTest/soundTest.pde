@@ -20,11 +20,7 @@ void draw() {
 }
 
 void keyPressed () {
-	// if (manakin.running){ 
-	// 	manakin.stopLoop();
-	// } else  {
-	// 	manakin.startLoop(1,5,0.3,1,5);
-	// }
 
 	manakin.toggle();
+	
 }
