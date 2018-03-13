@@ -6,6 +6,7 @@ class Sample {
 	public float loopSpace;
 	public String status = "OFF";
 	public boolean running = false, islooping = false;
+	public float loopSpaceRandomness = 0.4;
 
 	Sample (String filename) {
 		player = m.loadFile(filename);
@@ -69,7 +70,8 @@ class Sample {
 	}
 
 	void setEndTime() {
-		endTime = millis() + player.length() + int(loopSpace * 1000);
+		endTime = millis() + player.length() + 
+		int(random(1-loopSpaceRandomness,1+loopSpaceRandomness) * loopSpace * 1000);
 	}
 
 	void setLoopEndTime() {
@@ -77,10 +79,7 @@ class Sample {
 	}
 
 	void update() {
-
-		switch (status) {
-		case "ON":
-
+		if (running){
 			if (millis() > endTime) {
 				if (islooping) {
 					if (loopCount < iterations) {
@@ -94,12 +93,8 @@ class Sample {
 				} else {
 					restartLoop();
 				}
-
 			}
-			break;
-		case "OFF":
-
-			break;
 		}
 	}
+
 }
