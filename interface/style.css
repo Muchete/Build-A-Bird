@@ -30,27 +30,50 @@ h1{
   font-family: "Chivo-Bold";
   text-align: center;
   font-size: 25px;
-  line-height: 108px;
 }
 
 p{
   font-family: "Chivo-Regular";
   text-align: center;
   font-size: 25px;
-  line-height: 108px;
 }
 .wrappAll{
   position: relative;
   background-color: black;
   width: 1500px;
   height: 1000px;
-  left: 265px;
-  top: 110px;
+  left: 270px;
+  top: 182px;
+}
+
+.title{
+  position: absolute;
+  background-color: #6CC7B4;
+  width: 900px;
+  height:150px;
+  top: -150px;
+  left: 300px;
+
+}
+
+.birdBody{
+  position: absolute;
+  height: 1000px;
+  width: 250px;
+  left: 0px;
+}
+
+.birdBody{
+  position: absolute;
+  height: 1000px;
+  width: 250px;
+  left: 280px;
+  background-color: red;
 }
 
 .iconBox{
   position: absolute;
-  background-color: white;
+  background-color: #6CC7B4;
   width: 250px;
   height: 240px;
   left: 0px;
@@ -59,63 +82,62 @@ p{
 
 .nameBox{
   position: absolute;
-  background-color: lightgrey;
+  background-color: white;
   width: 250px;
   height: 100px;
   left: 0px;
   top: 250px;
+  padding-top: 39px;
 
   text-align: center;
-  line-height: 50px;
 
 }
 
 .partBox{
   position: absolute;
-  background-color: red;
+  background-color: white;
   width: 250px;
   height: 100px;
   left: 0px;
-  top: 350px;
-
+  top: 355px;
   text-align: center;
-  line-height: 50px;
+  padding-top: 38px;
 
 }
 
 .contentBox{
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
   position: absolute;
-  background-color: blue;
+  background-color: white;
   width: 250px;
   height: 240px;
   left: 0px;
   top: 460px;
   text-align: center;
-  line-height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+
 }
 
-.specialBox{
-  left: 20px;
+.videoBox{
   position: absolute;
+  background-color: white;
+  width: 250px;
+  height: 240px;
+  left: 0px;
+  top: 708px;
+  text-align: center;
   overflow: hidden;
-  height: 190px;
-  width: 350px;
-  background-color: grey;
-  border-radius: 20px;
-}
-.canal{
-  height: 25px;
-  width: 25px;
-}
-.contentBox{
-
 }
 
 video{
-  height: 197px;
-  width: 350px;
+  position: absolute;
+  height: 185px;
   padding: none;
   margin: none;
+  left: -60px;
 }
 
 h2{
