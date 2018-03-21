@@ -1,15 +1,102 @@
 @font-face {
-  font-family: 'quicksand-Bold';
-  src: url('font/Quicksand-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+  font-family: 'Chivo-Regular';
+  src: url('font/Chivo-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Chivo-Bold';
+  src: url('font/Chivo-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Chivo-Black';
+  src: url('font/Chivo-Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Chivo-Light';
+  src: url('font/Chivo-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 
 body{
-  font-family: "quicksand-Bold";
+  font-family: "Chivo-Regular";
+  background-color: grey;
+}
+
+img{
+  width: 100%;
+}
+
+h1{
+  font-family: "Chivo-Bold";
+  text-align: center;
+  font-size: 25px;
+  line-height: 108px;
+}
+
+p{
+  font-family: "Chivo-Regular";
+  text-align: center;
+  font-size: 25px;
+  line-height: 108px;
+}
+.wrappAll{
+  position: relative;
+  background-color: black;
+  width: 1500px;
+  height: 1000px;
+  left: 265px;
+  top: 110px;
+}
+
+.iconBox{
+  position: absolute;
+  background-color: white;
+  width: 250px;
+  height: 240px;
+  left: 0px;
+  top: 0px;
+}
+
+.nameBox{
+  position: absolute;
+  background-color: lightgrey;
+  width: 250px;
+  height: 100px;
+  left: 0px;
+  top: 250px;
+
+  text-align: center;
+  line-height: 50px;
+
+}
+
+.partBox{
+  position: absolute;
+  background-color: red;
+  width: 250px;
+  height: 100px;
+  left: 0px;
+  top: 350px;
+
+  text-align: center;
+  line-height: 50px;
+
+}
+
+.contentBox{
+  position: absolute;
+  background-color: blue;
+  width: 250px;
+  height: 240px;
+  left: 0px;
+  top: 460px;
+  text-align: center;
+  line-height: 50px;
 }
 
 .specialBox{
   left: 20px;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   height: 190px;
   width: 350px;
