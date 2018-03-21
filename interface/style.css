@@ -20,6 +20,7 @@
 body{
   font-family: "Chivo-Regular";
   background-color: grey;
+  transition: background-color 2s;
 }
 
 img{
@@ -112,7 +113,7 @@ p{
   left: 0px;
   top: 250px;
   padding-top: 39px;
-
+  text-transform: capitalize;
   text-align: center;
 
 }
@@ -126,7 +127,7 @@ p{
   top: 355px;
   text-align: center;
   padding-top: 38px;
-
+  text-transform: capitalize;
 }
 
 .contentBox{
