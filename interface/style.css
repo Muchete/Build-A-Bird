@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'quicksand-Bold';
+  src: url('font/Quicksand-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+body{
+  font-family: "quicksand-Bold";
+}
+
+.specialBox{
+  left: 20px;
+  position: relative;
+  overflow: hidden;
+  height: 190px;
+  width: 350px;
+  background-color: grey;
+  border-radius: 20px;
+}
+.canal{
+  height: 25px;
+  width: 25px;
+}
+.contentBox{
+
+}
+
+video{
+  height: 197px;
+  width: 350px;
+  padding: none;
+  margin: none;
+}
+
+h2{
+  position: absolute;
+  color: white;
+  font-size: 28px;
+  z-index: 2;
+  top:0px;
+  text-align: center;
+}
