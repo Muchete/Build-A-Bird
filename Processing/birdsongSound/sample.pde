@@ -15,7 +15,7 @@ class Sample {
 
 		for (String name : filenames) {
 			AudioPlayer player;
-			player = m.loadFile(name);
+			player = m.loadFile("sounds/" + name);
 			playerList.add(player);
 
 			if (player.length() > longestSample){
