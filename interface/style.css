@@ -24,6 +24,8 @@ body{
 }
 
 img{
+  position: absolute;
+  top:0;
   width: 100%;
 }
 
@@ -95,11 +97,20 @@ p{
 
 .iconBox{
   position: absolute;
-  background-color: #6CC7B4;
   width: 250px;
   height: 240px;
   left: 0px;
   top: 0px;
+  background-color: white;
+}
+
+.backgroundIcon{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #6CC7B4;
+  display: none;
+
 }
 
 .nameBox{
@@ -127,6 +138,11 @@ p{
   text-transform: capitalize;
 }
 
+.contentBox p{
+  font-size: 15px;
+  line-height: 20px;
+}
+
 .contentBox{
   box-sizing: border-box;
   display: flex;
@@ -138,8 +154,8 @@ p{
   left: 0px;
   top: 460px;
   text-align: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 
 }
 
