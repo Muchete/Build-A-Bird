@@ -57,43 +57,39 @@ p{
 
 }
 
-.birdBody{
+.birdTail{
   position: absolute;
   height: 1000px;
   width: 250px;
   left: 0px;
 }
 
-.birdHead{
+.birdFeet{
   position: absolute;
   height: 1000px;
   width: 250px;
   left: 280px;
-  background-color: blue;
+}
+
+.birdBody{
+  position: absolute;
+  height: 1000px;
+  width: 250px;
+  left: 565px;
 }
 
 .birdWings{
   position: absolute;
   height: 1000px;
   width: 250px;
-  left: 565px;
-  background-color: blue;
-}
-
-.birdTail{
-  position: absolute;
-  height: 1000px;
-  width: 250px;
   left: 850px;
-  background-color: blue;
 }
 
-.birdFeet{
+.birdHead{
   position: absolute;
   height: 1000px;
   width: 250px;
   left: 1132px;
-  background-color: blue;
 }
 
 .iconBox{
