@@ -48,6 +48,7 @@ void connect() {
 
   // client.subscribe("/hello");
   // client.unsubscribe("/hello");
+
 }
 
 // void messageReceived(String &topic, String &payload) {
@@ -101,11 +102,11 @@ void newPart(int input, int partId){
     //client.publish("bird", birdName[partId]);
     //client.publish("part", partName[partId]);
 
-    char combined[32] = {0};
+    char combined[64] = {0};
 
     char part[32];
     sprintf(part,"%d",partId);
-    
+
     strcat(combined, connectorName[input]);
     strcat(combined, ",");
     strcat(combined, birdName[partId]);
