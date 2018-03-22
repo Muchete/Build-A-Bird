@@ -52,8 +52,8 @@ p{
 
 .title{
   position: absolute;
-  background-color: #6CC7B4;
-  width: 900px;
+  background-image: url("titlebackground.jpg");
+  width: 4000px;
   height:150px;
   top: -150px;
   left: 300px;

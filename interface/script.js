@@ -4,7 +4,17 @@ var timer = 0;
 var receivedString = ["wings","none","none","0"];
 var lastReceivedString = ["yomoma"];
 
-
+$(document).ready(function() {
+    function loop() {
+        $('.title').css({left:-2900});
+        $('.title').animate ({
+            left: '+=3220',
+        }, 20000, 'linear', function() {
+            loop();
+        });
+    }
+    loop();
+});
 
 
 function findSpecialPart(column, bird, part) {
@@ -46,14 +56,14 @@ function getContent(bird, part) {
   }
 
   else if (bird == "waldkauz"){
-    if (part == "fluegel") {
+    if (part == "kopf") {
       return ("«Schnabelknappen» – Waldkäuze verfügen über ein grosses Lautrepertoire mit stark variierender Lautstärke und Klangfarbe. Sie verfügen über wenige Instrumentallaute wie das Schnabelknappen bei aggressiver Erregung.");
     }
   }
 
   else if (bird == "bekassine"){
     if (part == "schwanz") {
-      return ("«Wummern» oder «Meckern» – ist ein Instrumentallaut, der durch die speziell versteiften, äusseren Steuerfedern erzeugt wird. Er ist während der Balzflüge vor allem in der Morgen- und Abenddämmerung zu hören.");
+      return ("«Wummern» oder «Meckern» ist ein Instrumentallaut, der durch die speziell versteiften, äusseren Steuerfedern erzeugt wird. Er ist während der Balzflüge vor allem in der Morgen- und Abenddämmerung zu hören.");
     }
     else if (part == "kopf") {
       return ("Mit ihrem langen Schnabel stochern die Bekassinen tief im Untergrund oder Wasser und schreiten dabei langsam vorwärts.");
