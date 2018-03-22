@@ -10,7 +10,6 @@ class Sample {
 
 	Sample (String filename) {
 		player = m.loadFile(filename);
-
 		sampleList.add(this);
 	}
 

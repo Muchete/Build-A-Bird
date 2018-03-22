@@ -19,3 +19,29 @@ void loop() {
   Serial.println(sensorValue);
   delay(1000);
 }
+
+
+int valueList[] = {
+	100,
+	200,
+	300
+}
+
+int getId(int val){
+
+	int index = 0;
+	int dif = valueList[0] - val;
+	int curDif = abs(dif);
+	int minDif = curDif;
+
+	for (i = 1; i < valueList.length(); i++) {
+		dif = valueList[i] - val;
+		curDif = abs(dif);
+		if (curDif < minDif) {
+			index = i;
+			minDif = curDif;
+		}
+	}
+
+	return index;
+}
