@@ -1,15 +1,28 @@
 class Sample {
 
-	public AudioPlayer player;
+	public ArrayList<AudioPlayer> playerList = new ArrayList<AudioPlayer>();
+
 	public int speed, loopCount, iterations, spaceBetween, loopMin,
 	       loopMax, spaceMin, spaceMax, endTime;
 	public float loopSpace;
 	public String status = "OFF";
 	public boolean running = false, islooping = false;
 	public float loopSpaceRandomness = 0.4;
+	public int longestSample = 0;
 
-	Sample (String filename) {
-		player = m.loadFile(filename);
+
+	Sample (String[] filenames) {
+
+		for (String name : filenames) {
+			AudioPlayer player;
+			player = m.loadFile(name);
+			playerList.add(player);
+
+			if (player.length() > longestSample){
+				longestSample = player.length();
+			}
+		}
+
 		sampleList.add(this);
 	}
 
@@ -34,9 +47,17 @@ class Sample {
 
 	//stops loop
 	void stopLoop() {
-		status = "OFF";
-		running = false;
-		println("stopped Loop");
+		if (running){
+			status = "OFF";
+			running = false;
+			println("stopped Loop");
+		}
+	}
+
+	void start(){
+		if (!running){
+			startLoop(loopMin,loopMax, loopSpace, spaceMin, spaceMax);
+		}
 	}
 
 	//starts or stops loop (needs to be previously defined)
@@ -50,8 +71,10 @@ class Sample {
 
 	// necessary functions
 	void play() {
-		player.rewind();
-		player.play();
+		//plays random sample
+		int s = int(random(0, playerList.size()));
+		playerList.get(s).rewind();
+		playerList.get(s).play();
 	}
 
 	void restartLoop() {
@@ -69,7 +92,7 @@ class Sample {
 	}
 
 	void setEndTime() {
-		endTime = millis() + player.length() + 
+		endTime = millis() + longestSample + 
 		int(random(1-loopSpaceRandomness,1+loopSpaceRandomness) * loopSpace * 1000);
 	}
 
