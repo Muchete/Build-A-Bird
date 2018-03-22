@@ -35,7 +35,7 @@ void setup() {
 	beckaFeet = new Sample( new String[] {"Bekassine_1.wav", "Bekassine_2.wav", "Bekassine_3.wav"});
 	palmHead = new Sample( new String[] {"Club-wingd_manakin_01.wav"});
 	palmWings = new Sample( new String[] {"Club-wingd_manakin_01.wav"});
-	palmFeet = new Sample( new String[] {"Club-wingd_manakin_01.wav"});
+	palmFeet = new Sample( new String[] {"Cockatoo_feet_1.wav","Cockatoo_feet_2.wav","Cockatoo_feet_3.wav"});
 	palmTail = new Sample( new String[] {"Club-wingd_manakin_01.wav"});
 	manakinWings = new Sample( new String[] {"Club-wingd_manakin_01.wav", "Club-wingd_manakin_02.wav", "Club-wingd_manakin_03.wav"});
 	spechtHead = new Sample( new String[] {"Specht_01.wav", "Specht_02.wav", "Specht_03.wav"});

@@ -51,7 +51,7 @@ class Sample {
 		if (running){
 			status = "OFF";
 			running = false;
-			println("stopped Loop");
+			// println("stopped Loop");
 		}
 	}
 
@@ -94,7 +94,7 @@ class Sample {
 		spaceBetween = int(random(spaceMin, spaceMax) * 1000);
 		setEndTime();
 
-		println("created loop");
+		// println("created loop");
 	}
 
 	void setEndTime() {
