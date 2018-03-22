@@ -9,6 +9,7 @@ class Sample {
 	public boolean running = false, islooping = false;
 	public float loopSpaceRandomness = 0.4;
 	public int longestSample = 0;
+	public String connector;
 
 
 	Sample (String[] filenames) {
@@ -50,11 +51,12 @@ class Sample {
 		if (running){
 			status = "OFF";
 			running = false;
-			println("stopped Loop");
+			// println("stopped Loop");
 		}
 	}
 
-	void start(){
+	void start(String c){
+		connector = c;
 		if (!running){
 			startLoop(loopMin,loopMax, loopSpace, spaceMin, spaceMax);
 		}
@@ -75,6 +77,10 @@ class Sample {
 		int s = int(random(0, playerList.size()));
 		playerList.get(s).rewind();
 		playerList.get(s).play();
+
+		if (connector != null){
+			client.publish("/activeSound", connector);
+		}
 	}
 
 	void restartLoop() {
@@ -88,7 +94,7 @@ class Sample {
 		spaceBetween = int(random(spaceMin, spaceMax) * 1000);
 		setEndTime();
 
-		println("created loop");
+		// println("created loop");
 	}
 
 	void setEndTime() {
