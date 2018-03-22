@@ -1,7 +1,7 @@
 //special Parts
 var specialParts = ["storchkopf", "helmspechtkopf", "palmkakadubeine", "bekassineschwanz", "schnurrvogelfluegel", "blaukopfschmetterlingbeine"]
 var timer = 0;
-var receivedString =[];
+var receivedString = ["wings","none","none","0"];
 var lastReceivedString = ["yomoma"];
 
 
@@ -69,12 +69,23 @@ function makeChanges(column, bird, part) {
   console.log(column);
   findSpecialPart(column, bird, part);
   $(column).children(".iconBox").children("img").attr("src", "icons/" + bird + "_" + part + ".png");
-  $(column).children(".nameBox").children("h1").text(bird);
-  $(column).children(".partBox").children("p").text(part);
   $(column).children(".contentBox").children("p").text(getContent(bird, part));
-  $(column).children(".iconBox").children("img").attr("src", "icons/" + bird + "_" + part + ".png");
+
+
   $(column).children(".videoBox").children("video").children("source").attr("src", "videos/" + bird + ".mp4");
   $(column).children(".videoBox").children("video")[0].load();
+
+  if (bird == "blaukopfschmetterling") {
+    bird = "blaukopf-\nschmetterling";
+  }
+  $(column).children(".nameBox").children("h1").text(bird);
+
+
+  if (part == "fluegel") {
+    part = "flügel";
+  }
+  $(column).children(".partBox").children("p").text(part);
+
 }
 
 
@@ -87,7 +98,7 @@ client.on('connect', function() {
   console.log('client has connected!');
 
   client.subscribe('eventString');
-
+  client.subscribe('activeSound');
   // client.unsubscribe('/example');
 
   // setInterval(function(){
@@ -96,12 +107,18 @@ client.on('connect', function() {
 });
 
 client.on('message', function(topic, message) {
-  receivedString = message.toString().split(",");
-  resetTimer();
-  console.log(receivedString);
+  if (topic == "eventString") {
+    receivedString = message.toString().split(",");
+    resetTimer();
+    console.log(receivedString);
+  }
+  else if (topic == "activeSound") {
+    console.log(message.toString());
+  }
+
 });
 
-function resetTimer(connector,bird,part){
+function resetTimer(connector, bird, part) {
   timer = 0;
 };
 
@@ -109,17 +126,22 @@ function resetTimer(connector,bird,part){
 
 setInterval(timerCount, 20);
 
-function timerCount(){
+function timerCount() {
   timer++;
   //console.log(timer);
   if (timer == 4 && receivedString != lastReceivedString) {
-    client.publish("filteredString", receivedString[0]+","+receivedString[1]+","+receivedString[2]+","+receivedString[3]);
+    client.publish("filteredString", receivedString[0] + "," + receivedString[1] + "," + receivedString[2] + "," + receivedString[3]);
     changePart(receivedString[0], receivedString[1], receivedString[2]);
     lastReceivedString = receivedString;
 
 
   }
 };
+
+function soundVisual(connector){
+
+}
+
 changePart("head", "none", "none");
 changePart("feet", "none", "none");
 changePart("wings", "none", "none");
