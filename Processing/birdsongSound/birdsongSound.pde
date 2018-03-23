@@ -39,7 +39,7 @@ void setup() {
 	palmTail = new Sample( new String[] {"Club-wingd_manakin_01.wav"});
 	manakinWings = new Sample( new String[] {"Club-wingd_manakin_01.wav", "Club-wingd_manakin_02.wav", "Club-wingd_manakin_03.wav"});
 	spechtHead = new Sample( new String[] {"Specht_01.wav", "Specht_02.wav", "Specht_03.wav"});
-	cordonFeet = new Sample( new String[] {"Club-wingd_manakin_01.wav", "Club-wingd_manakin_02.wav", "Club-wingd_manakin_03.wav"});
+	cordonFeet = new Sample( new String[] {"CordonBleu_01.wav", "CordonBleu_02.wav"});
 
 	backgroundSound = new Sample( new String[] {"Cockatoo_song_1.wav", "Cockatoo_song_2.wav", "Cockatoo_song_3.wav"});
 
