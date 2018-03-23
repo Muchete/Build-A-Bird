@@ -24,6 +24,8 @@ body{
 }
 
 img{
+  position: absolute;
+  top:0;
   width: 100%;
 }
 
@@ -31,6 +33,7 @@ h1{
   font-family: "Chivo-Bold";
   text-align: center;
   font-size: 25px;
+  width: 100%;
 }
 
 p{
@@ -49,73 +52,78 @@ p{
 
 .title{
   position: absolute;
-  background-color: #6CC7B4;
-  width: 900px;
+  background-image: url("titlebackground.jpg");
+  width: 4000px;
   height:150px;
   top: -150px;
   left: 300px;
 
 }
 
-.birdBody{
-  position: absolute;
-  height: 1000px;
-  width: 250px;
-  left: 0px;
-}
-
-.birdHead{
-  position: absolute;
-  height: 1000px;
-  width: 250px;
-  left: 280px;
-  background-color: blue;
-}
-
-.birdWings{
-  position: absolute;
-  height: 1000px;
-  width: 250px;
-  left: 565px;
-  background-color: blue;
-}
-
 .birdTail{
   position: absolute;
   height: 1000px;
   width: 250px;
-  left: 850px;
-  background-color: blue;
+  left: 0px;
 }
 
 .birdFeet{
   position: absolute;
   height: 1000px;
   width: 250px;
+  left: 280px;
+}
+
+.birdBody{
+  position: absolute;
+  height: 1000px;
+  width: 250px;
+  left: 565px;
+}
+
+.birdWings{
+  position: absolute;
+  height: 1000px;
+  width: 250px;
+  left: 850px;
+}
+
+.birdHead{
+  position: absolute;
+  height: 1000px;
+  width: 250px;
   left: 1132px;
-  background-color: blue;
 }
 
 .iconBox{
   position: absolute;
-  background-color: #6CC7B4;
   width: 250px;
   height: 240px;
   left: 0px;
   top: 0px;
+  background-color: white;
+}
+
+.backgroundIcon{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #6CC7B4;
+  display: none;
+
 }
 
 .nameBox{
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
   position: absolute;
   background-color: white;
   width: 250px;
   height: 100px;
   left: 0px;
   top: 250px;
-  padding-top: 39px;
   text-transform: capitalize;
-  text-align: center;
-
 }
 
 .partBox{
@@ -130,6 +138,11 @@ p{
   text-transform: capitalize;
 }
 
+.contentBox p{
+  font-size: 15px;
+  line-height: 20px;
+}
+
 .contentBox{
   box-sizing: border-box;
   display: flex;
@@ -141,8 +154,8 @@ p{
   left: 0px;
   top: 460px;
   text-align: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 
 }
 
@@ -162,7 +175,7 @@ video{
   height: 185px;
   padding: none;
   margin: none;
-  left: -60px;
+  left: -38px;
 }
 
 h2{
