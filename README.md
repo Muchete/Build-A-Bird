@@ -1,6 +1,6 @@
 # Build A Bird
 
-A group project from Alessa Gassmann, Tobias Dupuch, and Michael Schönenberger for the [BirdLife](http://www.birdlife.ch/de) in Neerach. This project was developed during the Spatial Interaction module in the Bachelor of Interaction Design in Zurich.
+A group project from Alessa Gassmann, [Tobias Dupuch](https://github.com/TobiasDupuch), and Michael Schönenberger for the [BirdLife](http://www.birdlife.ch/de) in Neerach. This project was developed during the Spatial Interaction module in the Bachelor of Interaction Design in Zurich.
 
 ![Build A Bird](https://user-images.githubusercontent.com/29760709/37987869-b0c00050-31ff-11e8-8404-67516d81563b.png)
 
